@@ -1,0 +1,12 @@
+webapp:
+  build: .
+  volumes:
+    - ./:/app
+  links:
+    - postgresdb
+  ports:
+    - "3000:3000"
+
+postgresdb:
+  container_name: "postgresdb"
+  image: "postgres:9.5.2"
